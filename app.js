@@ -28,8 +28,15 @@ if(!isProduction) {
 }
 
 //Configure Mongoose
-mongoose.connect('mongodb://localhost/passport-tutorial');
-mongoose.set('debug', true);
+const MongoClient = require('mongodb').MongoClient
+
+const client = new MongoClient('mongodb://localhost:27017/app1',{useNewUrlParser: true});
+client.connect((err,database)=>{
+  if(err) console.log(err);
+    db=database.db("app2")
+    console.log("database : test created")
+    app.listen(8000, () => console.log('Server running on http://localhost:8000/'));
+})
 
 //Models & routes
 require('./models/User');
