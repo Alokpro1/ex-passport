@@ -1,6 +1,6 @@
 # ex-passport
 
-It can be tested using Postman. The project is still on production.
+It can be tested using Postman. The project is still on developement.
 
 
 
